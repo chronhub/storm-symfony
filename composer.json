@@ -1,0 +1,61 @@
+{
+    "name": "chronhub/storm-symfony",
+    "description": "Storm Symfony bundle — wires the Storm packages into a Symfony application.",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "keywords": ["storm", "symfony", "bundle", "cqrs", "event-sourcing"],
+    "require": {
+        "php": ">=8.5",
+        "chronhub/storm-aggregate-repository": "self.version",
+        "chronhub/storm-chronicler": "self.version",
+        "chronhub/storm-event-links": "self.version",
+        "chronhub/storm-clock": "self.version",
+        "chronhub/storm-contracts": "self.version",
+        "chronhub/storm-ledger": "self.version",
+        "chronhub/storm-live-query": "self.version",
+        "chronhub/storm-message": "self.version",
+        "chronhub/storm-projector": "self.version",
+        "chronhub/storm-serializer": "self.version",
+        "chronhub/storm-story": "self.version",
+        "chronhub/storm-stream": "self.version",
+        "chronhub/storm-support": "self.version",
+        "composer-runtime-api": "^2.0",
+        "symfony/config": "^8.1",
+        "symfony/console": "^8.1",
+        "symfony/dependency-injection": "^8.1",
+        "symfony/event-dispatcher": "^8.1",
+        "symfony/finder": "^8.1",
+        "symfony/framework-bundle": "^8.1.1",
+        "symfony/http-foundation": "^8.1",
+        "symfony/http-kernel": "^8.1",
+        "symfony/messenger": "^8.1.1",
+        "symfony/routing": "^8.1",
+        "symfony/validator": "^8.1"
+    },
+    "require-dev": {
+        "chronhub/storm-aggregate": "self.version",
+        "chronhub/storm-saga": "self.version",
+        "chronhub/storm-telemetry": "self.version",
+        "doctrine/doctrine-bundle": "^3.2",
+        "phpunit/phpunit": "^13.3.0"
+    },
+    "suggest": {
+        "chronhub/storm-saga": "Opt-in workflow/process-manager module — the bundle wires it only when the package is installed (Saga Decision 0).",
+        "chronhub/storm-telemetry": "Opt-in observability — overrides the Null observability aliases and enables the /_storm/health endpoint when installed."
+    },
+    "autoload": {
+        "psr-4": {
+            "Storm\\Symfony\\": "./"
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Storm\\Symfony\\Tests\\": "Tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
